@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SensorUpdatedApp</string>
+    <string name="sensor_data">Sensor Data</string>
+
+</resources>
