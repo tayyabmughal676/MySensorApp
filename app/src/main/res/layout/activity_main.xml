@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/sensor_data"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,13 +19,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/sensorRecyclerView"
-        android:layout_width="409dp"
-        android:layout_height="667dp"
-        android:layout_marginTop="8dp"
-        tools:listitem="@layout/sensor_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:listitem="@layout/sensor_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

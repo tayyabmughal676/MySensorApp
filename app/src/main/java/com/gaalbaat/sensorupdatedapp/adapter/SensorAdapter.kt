@@ -8,11 +8,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.gaalbaat.sensorupdatedapp.R
+import com.gaalbaat.sensorupdatedapp.`interface`.SensorClickedValue
 import com.gaalbaat.sensorupdatedapp.model.SensorModel
 
 class SensorAdapter(
     private var mSensorDataList: MutableList<SensorModel>,
     private var mContext: Context,
+    private var mSensorValueListener: SensorClickedValue
 ) : RecyclerView.Adapter<SensorAdapter.SensorViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SensorViewHolder {
@@ -25,8 +27,10 @@ class SensorAdapter(
     }
 
     override fun onBindViewHolder(holder: SensorViewHolder, position: Int) {
+        val currentClickedValue = mSensorDataList[position]
+
         holder.itemView.setOnClickListener {
-            Toast.makeText(mContext, "clicked", Toast.LENGTH_SHORT).show()
+            mSensorValueListener.onSensorValueClickListener(currentClickedValue)
         }
         holder.bindItems(mSensorDataList[position])
     }

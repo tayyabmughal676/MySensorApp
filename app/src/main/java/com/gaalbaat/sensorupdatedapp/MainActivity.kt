@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.gaalbaat.sensorupdatedapp.`interface`.SensorClickedValue
 import com.gaalbaat.sensorupdatedapp.adapter.SensorAdapter
 import com.gaalbaat.sensorupdatedapp.model.SensorModel
 import com.gaalbaat.sensorupdatedapp.network.ApiClient
@@ -13,7 +14,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SensorClickedValue {
 
     private lateinit var mSensorRecyclerView: RecyclerView
     private var mSensorDataList: MutableList<SensorModel> = mutableListOf()
@@ -35,7 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         mSensorAdapter = SensorAdapter(
             mSensorDataList,
-            this
+            this,
+            this,
         )
         mSensorAdapter!!.notifyDataSetChanged()
         mSensorRecyclerView.adapter = mSensorAdapter
@@ -53,7 +55,16 @@ class MainActivity : AppCompatActivity() {
                 val mResponseCode = response.code()
                 if (mResponseCode == 200) {
                     val mResponseBody = response.body()
-                    Log.d("TAG", "onResponse: $mResponseBody")
+
+                    mSensorDataList.clear()
+
+                    mResponseBody?.let {
+                        mSensorDataList.addAll(it)
+                    }
+
+                    mSensorAdapter?.notifyDataSetChanged()
+
+                    Log.d("TAG", "onResponse: ${mResponseBody}")
                 } else {
                     Toast.makeText(this@MainActivity, "Data Not Found!", Toast.LENGTH_SHORT).show()
                 }
@@ -63,5 +74,16 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
             }
         })
+    }
+
+    override fun onSensorValueClickListener(sensorModel: SensorModel) {
+        Toast.makeText(
+            this, "PH_Sensor ${sensorModel.ph_sensor} \n" +
+                    "Hum_Sensor ${sensorModel.hum_sensor}\n" +
+                    "Temp_Sensor ${sensorModel.temp_sensor}\n" +
+                    "Light_Sensor ${sensorModel.light_sensor}\n" +
+                    "Moist_Sensor ${sensorModel.moist_sensor}",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }

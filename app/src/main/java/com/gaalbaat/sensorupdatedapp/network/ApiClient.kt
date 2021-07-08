@@ -9,8 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
 
-    private const val BASE_URL = "http://192.168.10.7:8000/api/"
-//
+    private const val BASE_URL = "https://prediction.stpsea.com/api/"
 
     //  gson
     private val gson: Gson by lazy {
