@@ -7,6 +7,10 @@ import com.gaalbaat.sensorupdatedapp.R
 import com.gaalbaat.sensorupdatedapp.model.SensorModel
 
 class ViewSensorValueActivity : AppCompatActivity() {
+
+    private var mPH_Sensor: Double = 0.0
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_sesnor_value)
@@ -26,6 +30,8 @@ class ViewSensorValueActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
 
+            mPH_Sensor = sensorValue.ph_sensor
         }
+
     }
 }
