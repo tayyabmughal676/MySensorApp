@@ -1,11 +1,10 @@
-package com.gaalbaat.sensorupdatedapp
+package com.gaalbaat.sensorupdatedapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
-import com.gaalbaat.sensorupdatedapp.activities.SensorActivity
+import com.gaalbaat.sensorupdatedapp.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.SensorUpdatedApp">
         <activity android:name=".activities.ViewSensorValueActivity"></activity>
         <activity android:name=".activities.SensorActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
