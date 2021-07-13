@@ -6,4 +6,196 @@
     android:layout_height="match_parent"
     tools:context=".activities.ViewSensorValueActivity">
 
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/pumpkimBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:text="@string/btn_pumpkim"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/tindaBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:text="@string/btn_tinda"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/akoraBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:text="@string/btn_akora"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:padding="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/value_ph_sensor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/value_hum_sensor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/value_temp_sensor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/light_sensor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/moist_sensor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <TextView
+                android:id="@+id/PH_Sensor_Value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Value"
+                android:textAlignment="center"
+
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.109"
+                app:layout_constraintStart_toEndOf="@+id/textView12"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/HUM_Sensor_Value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Value"
+                android:textAlignment="center"
+
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.068"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/PH_Sensor_Value" />
+
+            <TextView
+                android:id="@+id/TEMP_Sensor_Value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Value"
+                android:textAlignment="center"
+
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.047"
+                app:layout_constraintStart_toEndOf="@+id/textView14"
+                app:layout_constraintTop_toBottomOf="@+id/HUM_Sensor_Value" />
+
+            <TextView
+                android:id="@+id/LIGHT_Sensor_Value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:text="Value"
+                android:textAlignment="center"
+
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.064"
+                app:layout_constraintStart_toEndOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/TEMP_Sensor_Value" />
+
+            <TextView
+                android:id="@+id/MOIST_Sensor_Value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Value"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.048"
+                app:layout_constraintStart_toEndOf="@+id/textView16"
+                app:layout_constraintTop_toBottomOf="@+id/LIGHT_Sensor_Value" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

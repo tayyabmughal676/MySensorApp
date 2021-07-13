@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">SensorUpdatedApp</string>
     <string name="sensor_data">Sensor Data</string>
+    <string name="btn_pumpkim">Pumpkim</string>
+    <string name="btn_tinda">Tinda</string>
+    <string name="btn_akora">Akora</string>
+    <string name="value_ph_sensor">PH Sensor</string>
+    <string name="value_hum_sensor">Hum Sensor</string>
+    <string name="moist_sensor">Moist Sensor</string>
+    <string name="light_sensor">Light Sensor</string>
+    <string name="value_temp_sensor">Temp Sensor</string>
 
 </resources>
